@@ -13,7 +13,7 @@ class CreateGenresTable extends Migration
      */
     public function up()
     {
-        Schema::create('Genres', function (Blueprint $table) {
+        Schema::create('genres', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
             $table->boolean('is_active')->default(true);
