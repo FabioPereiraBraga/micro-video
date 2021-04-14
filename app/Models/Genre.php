@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Gender extends Model
+class Genre extends Model
 {
     use Uuid, SoftDeletes;
+
+    protected $keyType = 'string';
+    public $incrementing = false;
 
     protected $fillable = [
         'name',
@@ -19,6 +22,8 @@ class Gender extends Model
     'deleted_at'
     ];
     protected $casts = [
-        'id'=>'string'
+        'id'=>'string',
+        'name'=>'string',
+        'is_active'=>'bollean'
     ];
 }

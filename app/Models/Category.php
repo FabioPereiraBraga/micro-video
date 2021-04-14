@@ -10,6 +10,9 @@ class Category extends Model
 {
     use Uuid, SoftDeletes;
 
+    protected $keyType = 'string';
+    public $incrementing = false;
+
      protected $fillable = [
         'name',
         'description',
@@ -21,7 +24,10 @@ class Category extends Model
         ];
         
     protected $casts = [
-        'id'=>'string'
+        'id'=>'string',
+        'name' => 'string',
+        'description' => 'string',
+        'is_active' => 'bollean'
     ];
 
     

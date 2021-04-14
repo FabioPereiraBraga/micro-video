@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\Gender;
+use App\Models\Genre;
 use Illuminate\Database\Seeder;
 
-class GenderSeeder extends Seeder
+class GenreSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class GenderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Gender::class, 5)->create();
+        factory(Genre::class, 5)->create();
     }
 }

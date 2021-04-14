@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gender;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class GenderController extends Controller
+class GenreController extends Controller
 {
    
     private $rules = [
@@ -15,7 +15,7 @@ class GenderController extends Controller
 
     public function index()
     {
-      return Gender::all();
+      return Genre::all();
     }
 
 
@@ -23,7 +23,7 @@ class GenderController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate($this->rules);
-        $model = Gender::create($validated);
+        $model = Genre::create($validated);
 
 
         
@@ -31,14 +31,14 @@ class GenderController extends Controller
     }
 
  
-    public function show(Gender $genre)
+    public function show(Genre $genre)
     {
         return $genre;
     }
 
    
 
-    public function update(Request $request, Gender $genre)
+    public function update(Request $request, Genre $genre)
     {
         $validated = $request->validate($this->rules);
         $genre->update($validated);
@@ -46,7 +46,7 @@ class GenderController extends Controller
         return $genre;
     }
 
-    public function destroy(Gender $genre)
+    public function destroy(Genre $genre)
     {
       $genre->delete();
       return response()->noContent();   
