@@ -20,14 +20,16 @@ class Category extends Model
     ];
 
     protected $dates = [
-        'deleted_at'
+        'deleted_at',
+        'created_at',
+        'updated_at'
         ];
         
     protected $casts = [
         'id'=>'string',
         'name' => 'string',
         'description' => 'string',
-        'is_active' => 'bollean'
+        'is_active' => 'boolean'
     ];
 
     
