@@ -9,8 +9,8 @@ class GenreController extends Controller
 {
    
     private $rules = [
-      'name'=>'required',
-      'is_active'=>'required|boolean'
+      'name'=>'required|max:255',
+      'is_active'=>'boolean'
     ];
 
     public function index()
@@ -24,9 +24,8 @@ class GenreController extends Controller
     {
         $validated = $request->validate($this->rules);
         $model = Genre::create($validated);
+        $model->refresh();
 
-
-        
         return $model;
     }
 

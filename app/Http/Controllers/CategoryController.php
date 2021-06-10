@@ -9,9 +9,9 @@ class CategoryController extends Controller
 {
 
    private $rules = [
-    'name' => 'required',
+    'name' => 'required|max:255',
     'description' => 'nullable',
-    'is_active' => 'required|boolean',
+    'is_active' => 'boolean',
    ];
   
     public function index()
@@ -25,6 +25,7 @@ class CategoryController extends Controller
        $validated = $request->validate($this->rules);
 
        $model = Category::create($validated);
+       $model->refresh();
        return $model;
     }
 
